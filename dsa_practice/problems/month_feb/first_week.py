@@ -1,5 +1,5 @@
 #  __________________first day 2_2_2026_____________________
-def day1_main():
+def swap_values():
     # Swap the values of two variables without any temporary variable
     a = int(input("Enter the value of a: "))
     b = int(input("Enter the value of b: "))
@@ -11,6 +11,8 @@ def day1_main():
 
     print(f"After swapping the values are a = {a} and b = {b}\n")
 
+
+def check_number_sign():
     # Check if a number is positive, negative, or zero
     num = int(input("Enter your number here: "))
     if num == 0:
@@ -21,6 +23,8 @@ def day1_main():
         print("Your number is negative")
     print("\n")
 
+
+def simple_calculator():
     # Simple calculator: add, subtract, multiply, divide
     a = int(input("Enter the value of a: "))
     b = int(input("Enter the value of b: "))
@@ -29,6 +33,12 @@ def day1_main():
     print("Multiplication of the values is:", a * b)
     print("Division of the values is:", a // b)
     print("\n")
+
+
+def day1_main():
+    swap_values()
+    check_number_sign()
+    simple_calculator()
 
 
 #  __________________second day 3_2_2026_____________________
