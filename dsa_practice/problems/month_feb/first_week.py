@@ -1,5 +1,5 @@
 #  __________________first day 2_2_2026_____________________
-def day1_main():
+def swap_values():
     # Swap the values of two variables without any temporary variable
     a = int(input("Enter the value of a: "))
     b = int(input("Enter the value of b: "))
@@ -11,6 +11,8 @@ def day1_main():
 
     print(f"After swapping the values are a = {a} and b = {b}\n")
 
+
+def check_number_sign():
     # Check if a number is positive, negative, or zero
     num = int(input("Enter your number here: "))
     if num == 0:
@@ -21,6 +23,8 @@ def day1_main():
         print("Your number is negative")
     print("\n")
 
+
+def simple_calculator():
     # Simple calculator: add, subtract, multiply, divide
     a = int(input("Enter the value of a: "))
     b = int(input("Enter the value of b: "))
@@ -31,10 +35,17 @@ def day1_main():
     print("\n")
 
 
+def day1_main():
+    swap_values()
+    check_number_sign()
+    simple_calculator()
+
+
 #  __________________second day 3_2_2026_____________________
 def remove_duplicate(lst) -> list:
     return sorted(set(lst))
     print("\n")
+
 
 def count_frequency(lst) -> dict:
     freq = {}
@@ -46,6 +57,7 @@ def count_frequency(lst) -> dict:
     return freq
     print("\n")
 
+
 def get_value(d, *keys):
     for k in keys:
         d = d.get(k)
@@ -54,14 +66,9 @@ def get_value(d, *keys):
     return d
     print("\n")
 
+
 def day2_main():
-    data = {
-        "user": {
-            "profile": {
-                "name": "Ali"
-            }
-        }
-    }
+    data = {"user": {"profile": {"name": "Ali"}}}
 
     result = remove_duplicate([3, 1, 2, 3, 2, 1])
     print("Unique list:", result)
@@ -78,7 +85,6 @@ def day2_main():
 
 #  __________________third day 4_2_2026_____________________
 class AreaCalculator:
-
     def area_of_circle(self):
         radius = float(input("Enter the radius of the circle: "))
         return 3.14159 * radius * radius
@@ -104,7 +110,6 @@ class AreaCalculator:
         else:
             return f"{n} is not divisible by 3 or 5"
 
-
     def find_max_value(self):
         a = int(input("Enter the first value here:"))
         b = int(input("Enter the second value here:"))
@@ -115,7 +120,7 @@ class AreaCalculator:
             return b
         else:
             return c
-            
+
 
 def day3_main():
     calculator = AreaCalculator()
@@ -141,6 +146,66 @@ def day3_main():
     print("\n")
 
 
+#  __________________third day 4_2_2026_____________________
+class Day4:
+    def romman_to_int(self, s):
+        values = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+
+        total = 0
+
+        for i in range(len(s)):
+            if i < len(s) - 1 and values[s[i]] < values[s[i + 1]]:
+                total -= values[s[i]]
+            else:
+                total += values[s[i]]
+
+        return total
+
+    def find_grades(self, nums):
+        if nums >= 90:
+            print("Grade is A")
+        elif nums >= 80 and nums < 90:
+            print("Grade is B")
+        elif nums >= 70 and nums > 80:
+            print("Grade is C")
+        elif nums >= 60 and nums < 70:
+            print("Grade is D")
+        elif nums >= 50 and nums < 60:
+            print("Grade is E")
+        else:
+            return "You are Fail"
+
+    def leap_year(self, year):
+        if year % 2 == 0:
+            return "This is leap year"
+        else:
+            return "This is not leap year"
+
+    def palandrom(self, s):
+        if s == s[::-1]:
+            return "This is palandrom string"
+        else:
+            return "This is not palandrom string"
+
+
+def day4_main():
+    functions = Day4()
+
+    result = functions.romman_to_int("MCMXCIV")
+    print(result)
+    print("\n")
+
+    result = functions.find_grades(45)
+    print(result)
+    print("\n")
+
+    result = functions.leap_year(2012)
+    print(result)
+    print("\n")
+
+    result = functions.palandrom("iqrasami")
+    print(result)
+    print("\n")
 
 
 #  __________________run all days_____________________
@@ -153,6 +218,9 @@ def main():
 
     print("----- Day 3 -----")
     day3_main()
+
+    print("------ Day 4 ----")
+    day4_main()
 
 
 if __name__ == "__main__":
