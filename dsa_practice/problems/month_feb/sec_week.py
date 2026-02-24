@@ -22,6 +22,7 @@ class Day1:
                 maximum = n
         return maximum
 
+
 def day1_main():
 
     functions = Day1()
@@ -38,7 +39,7 @@ def day1_main():
     print(result)
     print("\n")
 
-    result = functions.max_list([4,5,6,6,7,8,2,9])
+    result = functions.max_list([4, 5, 6, 6, 7, 8, 2, 9])
     print(result)
     print("\n")
 
@@ -53,3 +54,6 @@ def main():
 if __name__ == "__main__":
     # Execute main() only when script is run directly (not imported)
     main()
+
+
+# tetsing comands
