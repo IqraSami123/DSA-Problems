@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    container_name: django_dsa_app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app                        # Mount current directory to /app inside container
+      - static_volume:/app/static     # Optional: separate volume for static files
+      - media_volume:/app/media       # Optional: separate volume for media files
+    ports:
+      - "8000:8000"                   # Map host port 8000 to container port 8000
+    environment:
+      - PYTHONUNBUFFERED=1            # Real-time logs
+
+# Define named volumes
+volumes:
+  static_volume:
+  media_volume:
